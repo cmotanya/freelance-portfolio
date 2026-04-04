@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Card } from "@/components/ui/card";
+import SkillsAccordion from "@/components/skills-accordion";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -26,6 +27,10 @@ export default function AboutSection() {
             make it clear, solid, and ready for real people to use.
           </p>
         </article>
+
+        <div>
+          <SkillsAccordion />
+        </div>
       </Card>
     </section>
   );

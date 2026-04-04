@@ -1,37 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Code Stack KE Portfolio
 
-## Getting Started
+A personal portfolio for Cornelius, built to showcase freelance services across web development, security, network infrastructure, and surveillance setup.
 
-First, run the development server:
+The current experience introduces a bold landing page with animated hero content, a short about section, and a clean structure for expanding into projects, contact, and more portfolio content.
+
+## What This Portfolio Communicates
+
+- Cornelius is available for freelance work.
+- The brand focus is helping clients go from zero to hero.
+- Services span web apps, security, network installations, and surveillance systems.
+- The site is being built as a modern, animated single-page portfolio.
+
+## Current Sections
+
+- `Hero` for the main pitch and primary calls to action
+- `About` for the personal introduction and service positioning
+- `Header` for brand identity and navigation entry point
+
+## Tech Stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- GSAP
+- Lucide React
+- shadcn-style UI primitives
+
+## Local Development
+
+Install dependencies and start the dev server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```text
+app/
+  about.tsx
+  header.tsx
+  hero.tsx
+  layout.tsx
+  page.tsx
 
-## Learn More
+components/
+  animations/
+  ui/
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Direction
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# freelance-code
+This portfolio is being shaped around clear messaging, strong typography, subtle motion, and a practical services-first presentation. Planned additions will likely include featured projects, contact details, and deeper service breakdowns.

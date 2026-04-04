@@ -48,7 +48,7 @@ export default function Hero() {
       id="hero"
       className="text-foreground flex flex-col items-center justify-center gap-10"
     >
-      <div className="border-border bg-muted text-muted-foreground gap-2 rounded-full border px-3 py-2 font-medium tracking-widest uppercase">
+      <div className="border-border bg-muted text-muted-foreground gap-2 rounded-full border px-3 py-2 text-sm font-medium tracking-widest uppercase">
         Available for Freelance Work
       </div>
 
