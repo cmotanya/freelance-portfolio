@@ -50,10 +50,6 @@ export default function Hero() {
     >
       <div className="border-border bg-background text-muted-foreground relative flex gap-2 rounded-full border py-2.5 pr-5 pl-2 font-semibold tracking-widest uppercase">
         Available for Freelance Work{" "}
-        <Sparkles
-          size={11}
-          className="absolute inset-0 top-1 left-[94%] fill-yellow-500 stroke-yellow-800"
-        />
       </div>
 
       <Card className="bg-card w-full p-5 backdrop-blur-sm">
