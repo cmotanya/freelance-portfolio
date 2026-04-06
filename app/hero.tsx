@@ -48,7 +48,7 @@ export default function Hero() {
       id="hero"
       className="flex flex-col items-center justify-center gap-10"
     >
-      <div className="border-border relative flex gap-2 rounded-full border py-2 pr-5 pl-2 font-semibold tracking-widest uppercase shadow-sm backdrop-blur-md">
+      <div className="border-border bg-background text-muted-foreground relative flex gap-2 rounded-full border py-2.5 pr-5 pl-2 font-semibold tracking-widest uppercase">
         Available for Freelance Work{" "}
         <Sparkles
           size={11}
@@ -68,7 +68,7 @@ export default function Hero() {
         </article>
 
         <div className="px-6">
-          <Button className="w-full px-3 py-7 text-base font-medium uppercase">
+          <Button className="w-full px-3 py-7 text-base font-semibold uppercase">
             View Projects{" "}
             <ArrowRight className="animate-float-left ml-1 transition-transform group-hover:translate-x-2" />
           </Button>
