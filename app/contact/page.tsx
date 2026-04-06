@@ -1,15 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowBigLeft, MapPin } from "lucide-react";
+import { ArrowLeft, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { contactDetails, quickLinks } from "@/data/contact";
 
 const Contact = () => {
   return (
     <section className="min-h-screen space-y-6 px-5 py-8">
-      <Button asChild className="text-base">
-        <Link href="/">
-          <ArrowBigLeft /> Back
+      <Button
+        asChild
+        className="px-4 py-6 text-base tracking-wide uppercase transition-all hover:scale-105 active:scale-95"
+      >
+        <Link href="/" className="flex items-center gap-2">
+          <ArrowLeft className="animate-float-right size-4" />
+          Back Home
         </Link>
       </Button>
 
@@ -57,7 +61,9 @@ const Contact = () => {
                 <p>{title}</p>
               </div>
 
-              <p className="text-primary font-semibold">{value}</p>
+              <p className="text-primary border-border bg-background rounded-lg border p-1 text-xs font-semibold tracking-tighter transition-all duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-sm active:scale-[102]">
+                {value}
+              </p>
             </div>
             <p className="text-muted-foreground text-xs font-medium">{note}</p>
           </Link>

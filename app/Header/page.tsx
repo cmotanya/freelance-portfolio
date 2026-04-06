@@ -11,7 +11,7 @@ export default function Header() {
 
         <Button
           asChild
-          className="bg-muted border-border text-muted-foreground px-3 py-6 font-semibold tracking-wide uppercase"
+          className="px-3 py-6 font-semibold tracking-wide uppercase transition-all duration-200 hover:scale-105 active:scale-95"
         >
           <Link href="/contact" className="flex items-center gap-1">
             Let&apos;s Talk
