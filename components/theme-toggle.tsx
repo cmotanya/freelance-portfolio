@@ -53,7 +53,7 @@ export default function ThemeToggle() {
       aria-label={`Switch to ${isLight ? "dark" : "light"} mode`}
       aria-pressed={!isLight}
       className={[
-        "relative overflow-hidden",
+        "relative size-12 overflow-hidden",
         "flex items-center justify-center",
         "transition-all duration-300 ease-out",
         "hover:scale-105 focus-visible:outline-none active:scale-95",
