@@ -2,16 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, BadgeCheck, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import CurrentTime from "@/components/current-time";
 import { contactDetails, quickLinks } from "@/data/contact";
 
 const Contact = () => {
-  const time = new Intl.DateTimeFormat("en-KE", {
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: true,
-    timeZone: "Africa/Nairobi",
-  }).format(new Date());
-
   return (
     <section className="mt-10 min-h-screen space-y-6">
       <div className="space-y-5 px-5">
@@ -26,7 +20,7 @@ const Contact = () => {
         <div className="px-3">
           <div className="flex items-center justify-between">
             <span className="border-border bg-muted rounded-xl border px-2 py-1.5 text-xs font-semibold tracking-[0.22em] uppercase">
-              Open For Work
+              Open For Work.
             </span>
             <div className="text-muted-foreground border-ring/30 flex items-center gap-1 rounded-xl border px-2 py-1 text-xs font-medium">
               <MapPin
@@ -77,9 +71,7 @@ const Contact = () => {
               I typically respond as soon as possible.
             </p>
             <p className="text-muted-foreground/80 text-xs font-bold">
-              Current time:{" "}
-              <span className="text-primary font-bold underline">{time}</span>{" "}
-              EAT (UTC+3)
+              Current time: <CurrentTime /> EAT (UTC+3)
             </p>
           </div>
         </div>
@@ -88,7 +80,7 @@ const Contact = () => {
       <div className="border-border border-t px-12 pt-10">
         <Button
           asChild
-          className="w-full px-4 py-6.5 text-base tracking-wide uppercase transition-all hover:scale-105 active:scale-95"
+          className="w-full px-4 py-7 text-base tracking-wide uppercase transition-all hover:scale-105 active:scale-95"
         >
           <Link href="/" className="flex items-center gap-2">
             <ArrowLeft className="animate-float-right size-4" />

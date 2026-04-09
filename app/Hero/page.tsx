@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
+
 import { ArrowRight } from "lucide-react";
 import { glitchEffect } from "@/components/animations/glitch";
 import { animateHeroEntrance } from "@/components/animations/animateHero";
@@ -10,34 +10,26 @@ import { Card } from "@/components/ui/card";
 import SkillsAccordion from "@/components/skills-accordion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(useGSAP);
 
 export default function Hero() {
   const container = useRef<HTMLElement>(null);
-  const titleRef = useRef<HTMLDivElement>(null);
-  const subTextRef = useRef<HTMLParagraphElement>(null);
-  const heroElement = useRef<HTMLSpanElement>(null);
+  const textRef = useRef<HTMLParagraphElement>(null);
 
   useGSAP(
     () => {
       let cleanupEntrance: (() => void) | undefined;
-      let cleanupGlitch: (() => void) | undefined;
 
-      if (titleRef.current && subTextRef.current) {
+      if (textRef.current) {
         cleanupEntrance = animateHeroEntrance({
-          titleEl: titleRef.current,
-          subTextEl: subTextRef.current,
+          textEl: textRef.current,
         });
-      }
-
-      if (heroElement.current) {
-        cleanupGlitch = glitchEffect(heroElement.current);
       }
 
       return () => {
         cleanupEntrance?.();
-        cleanupGlitch?.();
       };
     },
     { scope: container },
@@ -55,12 +47,13 @@ export default function Hero() {
 
       <Card className="bg-card w-full p-5 backdrop-blur-sm">
         <article data-intro="true" className="w-full space-y-4 text-base">
-          <p className="max-w-2xl leading-7">
+          <p ref={textRef} className="max-w-2xl leading-7">
             I&apos;m Cornelius. I design and deliver practical digital and
             physical systems, from <strong>web products</strong> to
             <strong> network installations</strong> and
             <strong> surveillance setups</strong>. The goal is always the same:
-            make it clear, solid, and ready for real people to use.
+            make it clear, solid, and ready for real people to use through the
+            web.
           </p>
         </article>
 
