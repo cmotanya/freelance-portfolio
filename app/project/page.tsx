@@ -1,13 +1,8 @@
-"use client";
-
-import { Button } from "@/components/ui/button";
-import { Category, Project_Categories } from "@/data/project";
-import { cn } from "@/lib/utils";
-import { useState } from "react";
+import ProjectTabs from "@/components/project-tabs";
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 const ProjectPage = () => {
-  const [category, setCategory] = useState<Category | "all">("all");
-
   return (
     <section className="mt-10 min-h-screen space-y-6">
       <div className="space-y-5 px-5">
@@ -15,21 +10,18 @@ const ProjectPage = () => {
         <p>Here are some of my recent projects that I&apos;ve worked on:</p>
       </div>
 
-      <div className="flex justify-center gap-4">
-        {Project_Categories.map(({ value, label }) => (
-          <Button
-            type="button"
-            key={value}
-            onClick={() => setCategory(value)}
-            aria-pressed={category === value}
-            className={cn(
-              "px-3 py-1",
-              category === value ? "text-background" : "",
-            )}
-          >
-            {label}
-          </Button>
-        ))}
+      <ProjectTabs />
+
+      <div className="my-10 flex w-full justify-center px-6">
+        <button
+          type="button"
+          className="bg-muted border-muted-foreground/50 rounded-2xl border px-4 py-3 text-lg leading-5 shadow-xs focus:ring-4"
+        >
+          <Link href="/" className="flex items-center gap-2">
+            <ArrowLeft size={15} className="animate-arrow transition-all" />{" "}
+            Back to Home
+          </Link>
+        </button>
       </div>
     </section>
   );
