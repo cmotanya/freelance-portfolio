@@ -1,40 +1,12 @@
 "use client";
 
-import { useRef } from "react";
-import { gsap } from "gsap";
-
 import { ArrowBigRight } from "lucide-react";
-import { animateHeroEntrance } from "@/components/animations/animateHero";
 import SkillsAccordion from "@/components/skills-accordion";
 import Link from "next/link";
-import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(useGSAP);
 
 export default function Hero() {
-  const container = useRef<HTMLElement>(null);
-  const textRef = useRef<HTMLParagraphElement>(null);
-
-  useGSAP(
-    () => {
-      let cleanupEntrance: (() => void) | undefined;
-
-      if (textRef.current) {
-        cleanupEntrance = animateHeroEntrance({
-          textEl: textRef.current,
-        });
-      }
-
-      return () => {
-        cleanupEntrance?.();
-      };
-    },
-    { scope: container },
-  );
-
   return (
     <section
-      ref={container}
       id="hero"
       className="flex flex-col items-center justify-center gap-10"
     >
@@ -44,7 +16,7 @@ export default function Hero() {
 
       <div className="bg-card border-muted-foreground/30 w-full space-y-8 rounded-3xl border p-5 backdrop-blur-sm">
         <article data-intro="true" className="w-full space-y-4 text-base">
-          <p ref={textRef} className="max-w-2xl leading-7">
+          <p className="max-w-2xl leading-7">
             I&apos;m Cornelius. I design and deliver practical digital and
             physical systems, from <strong>web products</strong> to
             <strong> network installations</strong> and
@@ -54,10 +26,10 @@ export default function Hero() {
           </p>
         </article>
 
-        <div className="flex w-full justify-start py-4">
+        <div className="flex w-full justify-start py-4 pl-1">
           <button
             type="button"
-            className="bg-muted text-primary border-primary rounded-2xl border p-2.5 leading-5 font-medium shadow-xs transition-all duration-200 ease-in-out hover:scale-105 focus:ring-4 active:scale-95"
+            className="bg-muted text-primary border-primary rounded-2xl border p-2.5 text-base leading-5 font-medium shadow-xs transition-all duration-200 ease-in-out hover:scale-105 focus:ring-4 active:scale-95"
           >
             <Link href="/project" className="flex items-center gap-3">
               View Projects

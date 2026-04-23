@@ -16,6 +16,7 @@ export const skills_group = [
     category: "Backend & Cloud",
     index: "02",
     tags: ["Supabase", "PostgreSQL", "Prisma ORM", "Drizzle"],
+    src: '/'
   },
   {
     category: "Network Infrastructure",

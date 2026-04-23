@@ -101,7 +101,7 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50 box-border;
+    @apply border-border box-border outline-none;
   }
   html {
     @apply w-[--width] scroll-p-18 scroll-smooth font-sans text-sm scheme-light-dark select-none;

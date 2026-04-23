@@ -4,6 +4,7 @@ import { siteMetadata } from "@/data/metadata";
 import { cn } from "@/lib/utils";
 import Header from "./Header/page";
 import Footer from "./Footer/page";
+import HotToaster from "@/components/hot-toaster";
 
 export const metadata = siteMetadata;
 
@@ -35,6 +36,8 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+
+        <HotToaster />
       </body>
     </html>
   );

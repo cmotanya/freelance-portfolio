@@ -1,14 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, MapPin } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import CurrentTime from "@/components/current-time";
 import { contactDetails, quickLinks } from "@/data/contact";
+import ContactForm from "@/components/contact-form";
 
 const Contact = () => {
   return (
     <section className="mt-10 min-h-screen space-y-6">
-      <div className="space-y-5 px-5">
-        <div>
+      <div className="space-y-5">
+        <div className="px-5">
           <h1 className="mt-8 text-3xl font-bold">Contact</h1>
           <h3 className="text-muted-foreground">
             Feel free to reach out for new projects, creative ideas, or
@@ -16,24 +17,28 @@ const Contact = () => {
           </h3>
         </div>
 
-        <div className="px-3">
+        <div className="px-10">
           <div className="flex items-center justify-between">
             <span className="border-success/70 bg-success/10 text-success flex items-center gap-1.5 rounded-xl border px-2 py-1.5 text-xs font-semibold tracking-wide uppercase">
-              <span className="bg-success size-2.5 rounded-full" />
+              <span className="bg-success size-2.5 animate-pulse rounded-full" />
               Open For Work.
             </span>
-            <div className="text-muted-foreground flex items-center gap-1 rounded-xl border px-2 py-1 text-xs font-medium uppercase">
-              <MapPin
-                size={18}
-                strokeWidth={3}
-                className="fill-primary stroke-primary-foreground"
+            <div className="flex items-center gap-1">
+              <Image
+                src="/contact/flag.svg"
+                alt="route icon"
+                width={15}
+                height={15}
               />
-              <span>{contactDetails.location}</span>
+              <span className="text-muted-foreground text-xs font-medium uppercase">
+                {contactDetails.location}
+              </span>
             </div>
           </div>
         </div>
 
-        <div className="grid gap-2 pt-5">
+        {/* Quick Link Socials */}
+        <div className="grid gap-2 px-5 pt-5">
           {quickLinks.map(({ title, value, href, iconSrc, note }) => (
             <Link
               key={title}
@@ -64,32 +69,38 @@ const Contact = () => {
           ))}
         </div>
 
-        <div className="border-muted-foreground/15 mt-16 gap-3 space-y-3 rounded-3xl border p-4 text-center">
-          <div className="flex items-center justify-center gap-3">
-            <Image
-              src="/contact/checkmark-badge.svg"
-              alt="checkmark badge"
-              width={20}
-              height={20}
-            />
-            <h3 className="text-muted-foreground text-lg font-medium">
-              Fast Response
-            </h3>
-          </div>
-          <p className="text-muted-foreground leading-tight">
-            I typically respond as soon as possible.
-          </p>
-          <div className="text-muted-foreground flex items-center justify-center gap-3 text-xs font-medium">
-            <Image
-              src="/contact/customer-service-stroke-rounded.svg"
-              alt="24 hour icon for support call"
-              width={20}
-              height={20}
-              className="object-fit"
-            />
+        {/* Contact Form Address */}
+        <ContactForm />
 
-            <div className="flex items-center gap-2 text-sm tracking-wider">
-              <CurrentTime /> EAT (UTC+3)
+        {/* Response and Timer */}
+        <div className="px-5">
+          <div className="border-muted-foreground/15 mt-16 gap-3 space-y-3 rounded-3xl border p-4 text-center">
+            <div className="flex items-center justify-center gap-3">
+              <Image
+                src="/contact/checkmark-badge.svg"
+                alt="checkmark badge"
+                width={20}
+                height={20}
+              />
+              <h3 className="text-muted-foreground text-lg font-medium">
+                Fast Response
+              </h3>
+            </div>
+            <p className="text-muted-foreground leading-tight">
+              I typically respond as soon as possible.
+            </p>
+            <div className="text-muted-foreground flex items-center justify-center gap-3 text-xs font-medium">
+              <Image
+                src="/contact/customer-service-stroke-rounded.svg"
+                alt="24 hour icon for support call"
+                width={20}
+                height={20}
+                className="object-fit"
+              />
+
+              <div className="flex items-center gap-2 text-sm tracking-wider">
+                <CurrentTime /> EAT (UTC+3)
+              </div>
             </div>
           </div>
         </div>
