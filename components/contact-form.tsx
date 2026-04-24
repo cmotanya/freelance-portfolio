@@ -81,7 +81,7 @@ const ContactForm = () => {
             placeholder="Write your message here"
             disabled={isPending}
             className={cn(
-              "placeholder:text-muted-foreground/50 focus-visible:border-muted-foreground/50 border-border resize-none rounded-xl border py-3 ps-4 transition",
+              "placeholder:text-muted-foreground/50 focus-visible:border-muted-foreground/50 border-muted-foreground/20 resize-none rounded-xl border py-3 ps-4 transition",
               state.error?.message ? "border-error/40" : "",
             )}
           />

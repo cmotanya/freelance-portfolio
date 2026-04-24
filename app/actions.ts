@@ -1,6 +1,5 @@
 "use server";
 
-import EmailConfirmation from "@/components/email-confirmation";
 import EmailNotification from "@/components/email-notification";
 import { resend } from "@/lib/resend";
 import { inputSchema } from "@/lib/schemas";
@@ -51,31 +50,20 @@ export async function submitContactForm(
   }
 
   try {
-    const { error } = await resend.batch.send([
-      //  Automated confirmation email to the user sending the email.
-      {
-        from: fromEmail!,
-        to: [email],
-        subject: `We received your message - Cornelius Motanya.`,
-        react: EmailConfirmation({ name, email, message }),
-      },
-
-      //  Notification email to the site owner
-      {
-        from: fromEmail!,
-        to: [contactEmail!],
-        subject: `New contact form submission from ${name}`,
-        react: EmailNotification({
-          name,
-          email,
-          message,
-          submittedAt: new Date().toLocaleString("en-US", {
-            dateStyle: "long",
-            timeStyle: "short",
-          }),
+    const { error } = await resend.emails.send({
+      from: fromEmail!,
+      to: [contactEmail!],
+      subject: `New contact form submission from ${name}`,
+      react: EmailNotification({
+        name,
+        email,
+        message,
+        submittedAt: new Date().toLocaleString("en-US", {
+          dateStyle: "long",
+          timeStyle: "short",
         }),
-      },
-    ]);
+      }),
+    });
 
     if (error) {
       console.error("Resend batch error", error);
