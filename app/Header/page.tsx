@@ -1,22 +1,36 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import ThemeToggle from "@/components/theme-toggle";
 
 export default function Header() {
+  const linear = "linear-gradient(135deg, #C2714F, #E8A838, #2A9D8F)";
+
   return (
-    <header className="border-border bg-background sticky top-0 z-50 border-b px-4 py-4 backdrop-blur-md sm:px-6 md:px-8">
+    <header className="bg-muted sticky top-0 z-50 border-b px-4 py-4 shadow-xs backdrop-blur-md sm:px-6 md:px-8">
       <div className="mx-auto flex max-w-7xl flex-row items-center justify-between gap-4">
         <ThemeToggle />
 
-        <button
-          type="button"
-          className="bg-muted text-primary border-primary/50 rounded-2xl border p-2 leading-5 font-medium shadow-xs transition-all duration-200 ease-in-out hover:scale-105 focus:ring-4 active:scale-95"
-        >
-          <Link href="/contact" className="flex items-center gap-1">
-            Let&apos;s Talk
-            <ArrowUpRight className="animate-float-slow size-4" />
-          </Link>
-        </button>
+        <Link href="/">
+          <div
+            className="relative flex size-12 shrink-0 items-center rounded-full p-0.5"
+            style={{ background: linear }}
+          >
+            <div className="bg-muted flex size-full items-center justify-center rounded-full">
+              <Image
+                src="/header/avatar.webp"
+                alt="Cornelius Motanya"
+                width={30}
+                height={30}
+                className="size-full rounded-full object-cover object-center p-0.5"
+              />
+            </div>
+
+            <div className="absolute top-0.5 right-0.5 flex size-2.5">
+              <span className="bg-success absolute inline-flex size-full animate-ping rounded-full opacity-75" />
+              <span className="bg-success relative inline-flex size-2.5 rounded-full" />
+            </div>
+          </div>
+        </Link>
       </div>
     </header>
   );

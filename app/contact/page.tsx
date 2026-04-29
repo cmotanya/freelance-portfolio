@@ -1,121 +1,110 @@
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
-import CurrentTime from "@/components/current-time";
-import { contactDetails, quickLinks } from "@/data/contact";
 import ContactForm from "@/components/contact-form";
+import { faqs, quickLinks } from "@/data/contact";
+import {
+  ArrowRight02Icon,
+  CustomerService01Icon,
+  Pin02Icon,
+  Quiz02Icon,
+  ZapIcon,
+} from "hugeicons-react";
+import Link from "next/link";
+import Image from "next/image";
+import CurrentTime from "@/components/current-time";
 
 const Contact = () => {
   return (
-    <section className="mt-10 min-h-screen space-y-6">
-      <div className="space-y-5">
-        <div className="px-5">
-          <h1 className="mt-8 text-3xl font-bold">Contact</h1>
-          <h3 className="text-muted-foreground">
-            Feel free to reach out for new projects, creative ideas, or
-            opportunities to work together.
-          </h3>
-        </div>
+    <section className="mt-10 min-h-screen space-y-8">
+      <div className="space-y-4 px-5">
+        <h1 className="text-6xl font-extrabold tracking-tighter uppercase">
+          Let&apos;s <span className="text-primary">Build</span>{" "}
+          <span className="text-foreground/50">Together</span>
+        </h1>
 
-        <div className="px-10">
-          <div className="flex items-center justify-between">
-            <span className="border-success/70 bg-success/10 text-success flex items-center gap-1.5 rounded-xl border px-2 py-1.5 text-xs font-semibold tracking-wide uppercase">
-              <span className="bg-success size-2.5 animate-pulse rounded-full" />
-              Open For Work.
-            </span>
-            <div className="flex items-center gap-1">
-              <Image
-                src="/contact/flag.svg"
-                alt="route icon"
-                width={15}
-                height={15}
-              />
-              <span className="text-muted-foreground text-xs font-medium uppercase">
-                {contactDetails.location}
-              </span>
-            </div>
-          </div>
-        </div>
-
-        {/* Quick Link Socials */}
-        <div className="grid gap-2 px-5 pt-5">
-          {quickLinks.map(({ title, value, href, iconSrc, note }) => (
-            <Link
-              key={title}
-              href={href}
-              className="bg-muted border-muted-foreground/30 space-y-4 rounded-3xl border p-3 transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-sm"
-            >
-              <div className="mr-5 flex items-center justify-between gap-4">
-                <div className="flex items-center gap-3">
-                  {iconSrc ? (
-                    <Image
-                      src={iconSrc}
-                      alt={`${title} icon`}
-                      width={20}
-                      height={20}
-                    />
-                  ) : null}
-                  <p>{title}</p>
-                </div>
-
-                <p className="text-primary border-muted-foreground/30 bg-background rounded-lg border p-1 text-xs font-medium tracking-tighter transition-all duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-sm active:scale-[102]">
-                  {value}
-                </p>
-              </div>
-              <p className="text-muted-foreground text-xs font-medium">
-                {note}
-              </p>
-            </Link>
-          ))}
-        </div>
-
-        {/* Contact Form Address */}
-        <ContactForm />
-
-        {/* Response and Timer */}
-        <div className="px-5">
-          <div className="border-muted-foreground/15 mt-16 gap-3 space-y-3 rounded-3xl border p-4 text-center">
-            <div className="flex items-center justify-center gap-3">
-              <Image
-                src="/contact/checkmark-badge.svg"
-                alt="checkmark badge"
-                width={20}
-                height={20}
-              />
-              <h3 className="text-muted-foreground text-lg font-medium">
-                Fast Response
-              </h3>
-            </div>
-            <p className="text-muted-foreground leading-tight">
-              I typically respond as soon as possible.
-            </p>
-            <div className="text-muted-foreground flex items-center justify-center gap-3 text-xs font-medium">
-              <Image
-                src="/contact/customer-service-stroke-rounded.svg"
-                alt="24 hour icon for support call"
-                width={20}
-                height={20}
-                className="object-fit"
-              />
-
-              <div className="flex items-center gap-2 text-sm tracking-wider">
-                <CurrentTime /> EAT (UTC+3)
-              </div>
-            </div>
-          </div>
+        <div className="flex items-center gap-1">
+          <Pin02Icon size={18} strokeWidth={2} /> Mombasa, Kenya
+          <CurrentTime /> EAT
         </div>
       </div>
 
-      <div className="mt-15 mb-10 flex w-full justify-center px-6">
-        <button
-          type="button"
-          className="bg-muted border-primary/50 text-muted-foreground rounded-2xl border p-2.5 leading-5 font-medium shadow-xs transition-all duration-200 ease-in-out hover:scale-105 focus:ring-4 active:scale-95"
-        >
-          <Link href="/" className="text-primary flex items-center gap-2">
-            <ArrowLeft size={15} className="animate-arrow transition-all" />{" "}
-            Back to Home
+      <ContactForm />
+
+      {/* Fast Response */}
+      <div className="my-14 space-y-2 px-5">
+        <h3 className="text-foreground/70 flex items-center gap-2 text-base font-bold tracking-widest uppercase">
+          <ZapIcon color="#4a4a4a" strokeWidth={2} /> Fast Response
+        </h3>
+        <div className="space-y-3">
+          <p className="text-foreground/50">
+            I typically respond within the shortest time, the moment I am
+            notified of the response.
+          </p>
+          <Link href="#contact-form">
+            <button className="bg-foreground text-background flex items-center gap-2 rounded-2xl px-5 py-3.5">
+              Book A Schedule <ArrowRight02Icon />
+            </button>
           </Link>
-        </button>
+        </div>
+      </div>
+
+      {/* Faqs */}
+      <div className="my-14 space-y-2 px-5">
+        <h3 className="text-foreground/70 flex items-center gap-2 text-base font-bold tracking-widest uppercase">
+          <Quiz02Icon color="#4a4a4a" strokeWidth={2} /> faq
+        </h3>
+        <p className="text-foreground/60 font-medium">
+          Everything you need to know before we get started.{" "}
+        </p>
+
+        <div className="space-y-3">
+          {faqs.map((faq, index) => (
+            <div key={index} className="flex flex-col gap-0.5">
+              <h4 className="font-semibold">{faq.q}</h4>
+              <p className="text-foreground/60 text-xs">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Direct contact */}
+      <div className="my-14 space-y-2 px-5">
+        <h3 className="text-foreground/70 flex items-center gap-2 text-base font-bold tracking-widest uppercase">
+          {" "}
+          <CustomerService01Icon color="#4a4a4a" strokeWidth={2} /> Direct
+          Channel
+        </h3>
+        <p className="text-foreground/60">
+          Do not hesitate to reach out for immediate technical questions and
+          chats.
+        </p>
+
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:col-span-8">
+          {quickLinks.map(({ title, value, href, iconSrc }) => (
+            <Link
+              key={title}
+              href={href}
+              className="bg-muted/30 rounded-3xl border p-4"
+            >
+              <div className="mb-4 flex items-start justify-between">
+                {iconSrc && (
+                  <Image
+                    src={iconSrc}
+                    alt={title}
+                    width={24}
+                    height={24}
+                    className=""
+                  />
+                )}
+                <span className="text-foreground/50 bg-background rounded-md border px-1 py-0.5 text-[10px] font-medium">
+                  {title}
+                </span>
+              </div>
+
+              <span className="text-primary font-medium tracking-widest">
+                {value}
+              </span>
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -5,7 +5,7 @@ export const getInputClass = (
   isTouched: boolean,
 ) =>
   cn(
-    "h-13 ps-4 rounded-xl placeholder:text-muted-foreground/50 transition border border-muted-foreground/20 focus-visible:border-muted-foreground/50 transition",
+    "h-13 ps-4 rounded-2xl placeholder:text-foreground/40 transition border focus-visible:border-foreground/50 transition",
     hasError ? "border-error/40" : isTouched && "border-success",
   );
 

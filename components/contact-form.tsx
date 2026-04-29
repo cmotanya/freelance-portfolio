@@ -1,11 +1,11 @@
 "use client";
 
 import { errorMessage, getInputClass, labelClass } from "./ui/form-helpers";
-import Image from "next/image";
 import { useActionState, useEffect, useRef } from "react";
 import { submitContactForm } from "@/app/actions";
 import { cn } from "@/lib/utils";
 import toast from "react-hot-toast";
+import { SentIcon } from "hugeicons-react";
 
 const ContactForm = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
@@ -33,8 +33,11 @@ const ContactForm = () => {
   }, [state]);
 
   return (
-    <div className="my-16 space-y-5 border-t px-5 py-5">
-      <h2>You can manually input your message here.</h2>
+    <div id="contact-form" className="space-y-5 px-5">
+      <h2 className="text-foreground/50 flex items-center font-semibold tracking-widest">
+        For consultation, reach me here...{" "}
+        <span className="animate-blink ms-1 h-4 w-0.5 bg-current" />
+      </h2>
 
       <form ref={formRef} action={formAction} noValidate className="space-y-3">
         <div className="flex flex-col">
@@ -81,7 +84,7 @@ const ContactForm = () => {
             placeholder="Write your message here"
             disabled={isPending}
             className={cn(
-              "placeholder:text-muted-foreground/50 focus-visible:border-muted-foreground/50 border-muted-foreground/20 resize-none rounded-xl border py-3 ps-4 transition",
+              "placeholder:text-foreground/40 focus-visible:border-foreground/50 border-muted-foreground/20 resize-none rounded-2xl border py-3 ps-4 transition",
               state.error?.message ? "border-error/40" : "",
             )}
           />
@@ -91,17 +94,15 @@ const ContactForm = () => {
         <div className="w-full">
           <button
             disabled={isPending}
-            className="bg-primary text-background ml-auto flex items-center gap-2 rounded-xl px-4 py-2 font-medium uppercase"
+            className={cn(
+              "bg-foreground text-background ml-auto flex items-center gap-2 rounded-2xl px-4 py-3 font-medium uppercase",
+              (state.error || isPending) &&
+                "bg-foreground/30 text-foreground/50",
+              isPending && "cursor-not-allowed",
+            )}
           >
             {isPending ? "Submitting..." : "Submit"}
-            {!isPending && (
-              <Image
-                src="/icons/form-icon/send.svg"
-                alt="send icon"
-                width="15"
-                height="15"
-              />
-            )}
+            {!isPending && <SentIcon />}
           </button>
         </div>
       </form>

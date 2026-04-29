@@ -31,3 +31,22 @@ export const quickLinks = [
     note: "Quick chat for simple questions and follow-ups.",
   },
 ];
+
+export const faqs = [
+  {
+    q: "What is your typical project lead time?",
+    a: "For web builds, usually 2–4 weeks. Infrastructure audits or physical networking setups can often be scheduled within 72 hours depending on site location.",
+  },
+  {
+    q: "Do you handle both hardware and software?",
+    a: "Yes. I specialize in the intersection of both—deploying robust networks and building the custom software that runs on them.",
+  },
+  {
+    q: "How do you handle maintenance?",
+    a: "I offer 'Node-Care' retainers for 24/7 monitoring. For one-off projects, I provide 30 days of complimentary technical support.",
+  },
+  {
+    q: "What tech stack do you prefer?",
+    a: "My 'Golden Stack' is Next.js, TypeScript, and Supabase. For physical security, I focus on Hikvision and Ubiquiti ecosystems.",
+  },
+];
