@@ -97,8 +97,8 @@ export default function Home() {
 
       {/* Recent deployments */}
       <div className="mx-5 my-15 space-y-2">
-        <h2 className="text-foreground/70 flex items-center gap-3 font-bold tracking-widest uppercase">
-          <StartUp01Icon color="#4a4a4a" strokeWidth={2} />
+        <h2 className="text-foreground/70 flex items-center gap-3 text-base font-bold tracking-widest uppercase">
+          <StartUp01Icon size={25} color="#4a4a4a" strokeWidth={2} />
           Recent Deployments
         </h2>
 
@@ -136,8 +136,8 @@ export default function Home() {
 
       {/* Infrastructure Details */}
       <div className="mx-5 my-15 space-y-3">
-        <h2 className="text-foreground/70 flex items-center gap-3 font-bold tracking-widest uppercase">
-          <ServerStack01Icon color="#4a4a4a" strokeWidth={2} />
+        <h2 className="text-foreground/70 flex items-center gap-3 text-base font-bold tracking-widest uppercase">
+          <ServerStack01Icon size={25} color="#4a4a4a" strokeWidth={2} />
           Tech Stack
         </h2>
 
@@ -160,8 +160,8 @@ export default function Home() {
 
       {/* The Workflow */}
       <div className="mx-5 my-15 space-y-2">
-        <h2 className="text-foreground/70 flex items-center gap-1.5 font-bold tracking-widest uppercase">
-          <Note03Icon color="#4a4a4a" strokeWidth={2} /> Workflow
+        <h2 className="text-foreground/70 flex items-center gap-1.5 text-base font-bold tracking-widest uppercase">
+          <Note03Icon size={25} color="#4a4a4a" strokeWidth={2} /> Workflow
         </h2>
 
         <div>
@@ -194,8 +194,9 @@ export default function Home() {
 
       {/* Testimonials */}
       <div className="mx-5 my-15 space-y-4">
-        <h2 className="text-foreground/70 flex items-center gap-1.5 font-bold tracking-widest uppercase">
-          <BubbleChatSpark01Icon color="#4a4a4a" strokeWidth={2} /> Feedback
+        <h2 className="text-foreground/70 flex items-center gap-1.5 text-base font-bold tracking-widest uppercase">
+          <BubbleChatSpark01Icon size={25} color="#4a4a4a" strokeWidth={2} />{" "}
+          Feedback
         </h2>
 
         <div className="mx-6 space-y-5">
@@ -224,8 +225,8 @@ export default function Home() {
 
       {/* Final CTA */}
       <div className="mx-5 my-15 space-y-2">
-        <h2 className="text-foreground/70 flex items-center gap-1.5 font-bold tracking-widest uppercase">
-          <ToolsIcon color="#4a4a4a" strokeWidth={2} /> Ready to build
+        <h2 className="text-foreground/70 flex items-center gap-1.5 text-base font-bold tracking-widest uppercase">
+          <ToolsIcon size={25} color="#4a4a4a" strokeWidth={2} /> Ready to build
         </h2>
 
         <p>

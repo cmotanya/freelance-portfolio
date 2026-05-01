@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { stats } from "@/data/project";
-import { ArrowRight02Icon } from "hugeicons-react";
+import { ArrowLeft02Icon, ArrowRight02Icon } from "hugeicons-react";
 import { cn } from "@/lib/utils";
 import { nova } from "@/data/fonts";
 import ProjectTabs from "@/components/project-tabs";
@@ -49,6 +49,14 @@ const ProjectPage = () => {
       </div>
 
       <ProjectTabs />
+
+      <div className="flex items-center justify-center">
+        <Link href="/">
+          <button className="bg-foreground text-background flex items-center gap-2 rounded-2xl px-5 py-3.5 font-medium tracking-widest uppercase">
+            <ArrowLeft02Icon /> Return to Home
+          </button>
+        </Link>
+      </div>
     </section>
   );
 };

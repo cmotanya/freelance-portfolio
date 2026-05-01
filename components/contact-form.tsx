@@ -96,9 +96,8 @@ const ContactForm = () => {
             disabled={isPending}
             className={cn(
               "bg-foreground text-background ml-auto flex items-center gap-2 rounded-2xl px-4 py-3 font-medium uppercase",
-              (state.error || isPending) &&
-                "bg-foreground/30 text-foreground/50",
-              isPending && "cursor-not-allowed",
+              isPending &&
+                "bg-foreground/30 text-foreground/50 cursor-not-allowed",
             )}
           >
             {isPending ? "Submitting..." : "Submit"}

@@ -1,4 +1,4 @@
-import { Heart } from "lucide-react";
+import { FavouriteIcon } from "hugeicons-react";
 
 const currentYear = new Date().getFullYear();
 
@@ -11,7 +11,7 @@ const Footer = () => {
         </span>
         <span>
           Designed & built with{" "}
-          <Heart className="stroke-error fill-error inline-block size-4" />{" "}
+          <FavouriteIcon className="stroke-error fill-error inline-block size-4" />{" "}
           using Next.js.
         </span>
       </div>
