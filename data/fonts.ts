@@ -13,10 +13,3 @@ export const nova = Nova_Script({
   display: "swap",
   weight: ["400"],
 });
-
-// export const coveredByYourGrace = Covered_By_Your_Grace({
-//   subsets: ["latin"],
-//   variable: "--font-covered-by-your-grace",
-//   display: "swap",
-//   weight: ["400"],
-// });

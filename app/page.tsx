@@ -61,6 +61,16 @@ export default function Home() {
           </p>
         </div>
 
+        <div className="flex items-center justify-center rounded-full">
+          <Image
+            src="/header/avatar.webp"
+            alt="Cornelius Motanya"
+            width={100}
+            height={110}
+            className="size-10 rounded-full object-cover object-center p-0.5"
+          />
+        </div>
+
         {/* CTA Buttons */}
         <div className="my-10 flex flex-col gap-3 px-10 font-semibold">
           <Link href="/project">
