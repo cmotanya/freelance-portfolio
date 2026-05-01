@@ -17,6 +17,8 @@ import {
   StartUp01Icon,
   ToolsIcon,
 } from "hugeicons-react";
+import { nova } from "@/data/fonts";
+import { cn } from "@/lib/utils";
 
 export default function Home() {
   return (
@@ -30,7 +32,9 @@ export default function Home() {
           <h1 className="text-6xl leading-[0.9] font-extrabold tracking-tighter">
             <span>Cornelius</span>
             <br />
-            <span className="text-foreground/60">Motanya</span>
+            <span className={cn("text-foreground/60", nova.className)}>
+              Motanya
+            </span>
           </h1>
 
           <div className="size-40 shrink-0 overflow-hidden rounded-full p-1">
@@ -84,7 +88,7 @@ export default function Home() {
             <span className="text-primary text-3xl font-extrabold">
               {value}
             </span>
-            <span className="text-xs font-bold tracking-widest uppercase">
+            <span className="text-foreground/60 text-[10px] leading-tight font-bold tracking-wide uppercase">
               {label}
             </span>
           </div>
@@ -108,6 +112,10 @@ export default function Home() {
                 <h3 className="text-primary text-lg font-bold">{t.name}</h3>
                 <p>{t.type}</p>
               </div>
+
+              <p className="text-foreground/60 text-[10px] font-medium">
+                {t.desc}
+              </p>
 
               <Link04Icon className="absolute top-1.5 right-1.5" />
 

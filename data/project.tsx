@@ -11,7 +11,7 @@ import {
 export type tabs = "all" | "website" | "installation";
 export type project_status = "Completed" | "In Progress";
 
-export const project_categories: { value: tabs; label: string }[] = [
+export const categories: { value: tabs; label: string }[] = [
   { value: "all", label: "All" },
   { value: "website", label: "Website" },
   { value: "installation", label: "Installation" },

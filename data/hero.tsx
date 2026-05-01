@@ -15,14 +15,16 @@ export const stats = [
 
 export const featuredProjects = [
   {
-    name: "Eats-Demo",
-    type: "Web Product",
-    tags: ["Next.js", "M-PESA"],
+    name: "My-Chama",
+    type: "Internal System",
+    tags: ["Tanstack Start", "PostgreSQL"],
+    desc: "Digital ledger for Kenyan savings cooperatives.",
   },
   {
     name: "JobTrack",
     type: "Internal System",
     tags: ["TypeScript", "Dashboards"],
+    desc: "Job application pipeline tracker.",
   },
 ];
 

@@ -11,6 +11,8 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import CurrentTime from "@/components/current-time";
+import { cn } from "@/lib/utils";
+import { nova } from "@/data/fonts";
 
 const Contact = () => {
   return (
@@ -18,7 +20,9 @@ const Contact = () => {
       <div className="space-y-4 px-5">
         <h1 className="text-6xl font-extrabold tracking-tighter uppercase">
           Let&apos;s <span className="text-primary">Build</span>{" "}
-          <span className="text-foreground/50">Together</span>
+          <span className={cn("text-foreground/50", nova.className)}>
+            Together
+          </span>
         </h1>
 
         <div className="flex items-center justify-between gap-1 text-xs">
